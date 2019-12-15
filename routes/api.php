@@ -12,18 +12,17 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
 Route::group(['namespace' => 'Api'], static function () {
 
-    Route::resource('categories', 'CategoryController', [
+    $exceptsRoutes = [
         'except' => [
             'create',
             'edit'
         ]
-    ]);
+    ];
+
+    Route::resource('categories', 'CategoryController', $exceptsRoutes);
+
+    Route::resource('genres', 'GenresController', $exceptsRoutes);
 
 });

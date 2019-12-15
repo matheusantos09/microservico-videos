@@ -6,22 +6,12 @@ use App\Models\Traits\Uuid;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-/**
- * Class Category
- *
- * @package App\Models
- */
-class Category extends Model
+class Genre extends Model
 {
-
     use SoftDeletes, Uuid;
 
-    /**
-     * @var array
-     */
     protected $fillable = [
         'name',
-        'description',
         'is_active'
     ];
 
