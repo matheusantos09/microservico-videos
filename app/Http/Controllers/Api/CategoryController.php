@@ -8,6 +8,19 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+    /*
+     *
+     * Existem duas formas de fazer a consulta usando o Depency Inject:
+     *
+     * Implicito é onde apeas se passa o TypeHint (Classe junto com a varaivel) como parametro e se
+     * subentende oque será feito por traz para hidratar a variavel
+     *
+     * Explicito é quando nos adicionamos alguma validação para que os dados sejam tratados diferente e
+     * por sequencia hidratar a variavel.
+     *
+     */
+
+
     private $rules = [
         'name'      => 'required|max:255',
         'is_active' => 'boolean'
